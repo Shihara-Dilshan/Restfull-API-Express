@@ -2,10 +2,14 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
+const cors = require('cors');
 require('dotenv/config');
 
 //USE BODY PARSER
 app.use(bodyParser.json())
+
+//ALLOW REQUEST FROM ANY DOMAIN
+app.use(cors());
 
 //IMPORT ROUTES
 const postRoute = require('./routes/posts');
