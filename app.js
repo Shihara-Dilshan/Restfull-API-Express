@@ -1,7 +1,16 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const bodyParser = require('body-parser');
 require('dotenv/config');
+
+//USE BODY PARSER
+app.use(bodyParser.json())
+
+//IMPORT ROUTES
+const postRoute = require('./routes/posts');
+
+app.use('/posts', postRoute);
 
 //ROUTES
 app.get("/", (req, res) => {
@@ -18,4 +27,4 @@ mongoose.connect(
 );
 
 //LISTEN TO THE SERVER
-app.listen(3000);
+app.listen(3001);
