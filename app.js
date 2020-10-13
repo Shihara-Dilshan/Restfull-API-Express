@@ -31,4 +31,4 @@ mongoose.connect(
 );
 
 //LISTEN TO THE SERVER
-app.listen(3001);
+app.listen(3000);
